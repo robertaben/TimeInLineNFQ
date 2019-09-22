@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('appointments/display', 'AppointmentController@display')->name('appointments.display');
-Route::resource('appointments', 'AppointmentController');
+Route::resource('appointments', 'AppointmentController', ['except' => 'show']);
+Route::get('/appointments/{slug}', 'AppointmentController@show')->name('appointments.show');
 
 Auth::routes();
 

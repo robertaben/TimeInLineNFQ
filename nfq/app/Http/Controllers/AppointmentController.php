@@ -17,8 +17,8 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments = Appointment::where('status', '=', '0')->orderBy('created_at')->get();
-        $allCompleted = Appointment::where('status', '=', '1')->orderBy('completed_at')->get();
+        $appointments = Appointment::activeAppointments()->get();
+        $allCompleted = Appointment::where('status', 1)->orderBy('completed_at')->get();
         return view('appointments.index', ['appointments'=> $appointments, 'allCompleted'=> $allCompleted]);
     }
 
@@ -43,11 +43,19 @@ class AppointmentController extends Controller
         $appointment = new Appointment();
         $appointment->user_id = 1;
         $appointment->customer_name = $request->input('customer_name');
-
+        if (Appointment::where('status', 0)->doesntExist())
+        {
+            $appointment->started_at = now();
+        }
+        $appointment->save();
+        $appointment->slug = str_slug($appointment->id.$appointment->created_at, '');
         $appointment->save();
 
-        $request->session()->flash('message', 'New appointment was created successfully!');
-        return view('welcome');
+        Appointment::waitingTime($appointment->id, $appointment->user_id);
+//        dd(Appointment::averageAppointmentTime($appointment->user_id));
+
+        $request->session()->flash('message', 'New appointment was created successfully! You can see your appointment status in the link below: http://127.0.0.1:8000/appointments/'.$appointment->slug);
+        return redirect()->back();
     }
 
     /**
@@ -56,9 +64,11 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $appointment = Appointment::where('slug', '=', $slug)->first();
+
+        return view('appointments.show', ['appointment' => $appointment]);
     }
 
     /**
@@ -86,6 +96,13 @@ class AppointmentController extends Controller
         $appointment->completed_at = now();
         $appointment->save();
 
+        if (Appointment::where('status', 0)->exists())
+        {
+            $nextAppointment = Appointment::where('status', 0)->oldest()->first();
+            $nextAppointment->started_at = $appointment->completed_at;
+            $nextAppointment->save();
+        }
+
         return redirect()->route('appointments.index');
     }
 
@@ -97,15 +114,14 @@ class AppointmentController extends Controller
      */
     public function destroy($id)
     {
-        $appointment = Appointment::where('id', '=', $id);
+        $appointment = Appointment::where('id', $id);
         $appointment->delete();
         return redirect()->route('appointments.index');
     }
 
     public function display()
     {
-        $appointments = Appointment::where('status', '=', '0')->orderBy('created_at')->limit(5)->get();
+        $appointments = Appointment::activeAppointments()->where('started_at', null)->get();
         return view('appointments.display', ['appointments'=> $appointments]);
-
     }
 }

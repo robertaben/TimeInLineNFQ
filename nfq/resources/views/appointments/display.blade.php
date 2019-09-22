@@ -3,12 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6 text-center pb-3">
+            <div class="col-md-8 text-center pb-3">
                 <h1>Display</h1>
             </div>
         </div>
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead class="thead-dark">
@@ -31,7 +31,7 @@
                                     <td>{{ $appointment->id }}</td>
                                     <td>{{ $appointment->customer_name }}</td>
                                     <td>
-                                        0
+                                        {{ $appointment->waitingTime($appointment->id, $appointment->user_id) }}
                                     </td>
                                 </tr>
                             @endforeach
