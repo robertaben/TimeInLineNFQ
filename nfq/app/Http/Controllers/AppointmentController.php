@@ -128,7 +128,7 @@ class AppointmentController extends Controller
 
     public function display()
     {
-        $appointments = Appointment::activeAppointments()->where('started_at', null)->get();
+        $appointments = Appointment::activeAppointments()->where('started_at', null)->limit(5)->get();
         return view('appointments.display', ['appointments'=> $appointments]);
     }
 

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29622cde-234c-4d32-b51d-1a26debc4329" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nfq/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/nfq/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,10 +51,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+        <entry file="file://$PROJECT_DIR$/nfq/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="192">
+                <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="45" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -68,22 +72,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nfq/app/Appointment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="371">
+              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
               <folding>
                 <element signature="e#40#81#0#PHP" expanded="true" />
               </folding>
@@ -116,7 +108,6 @@
         <option value="$PROJECT_DIR$/nfq/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/nfq/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/nfq/app/User.php" />
-        <option value="$PROJECT_DIR$/nfq/readme.md" />
         <option value="$PROJECT_DIR$/nfq/app/Appointment.php" />
         <option value="$PROJECT_DIR$/nfq/database/migrations/2019_09_21_164658_add_slug_column_to_appointments_table.php" />
         <option value="$PROJECT_DIR$/nfq/resources/views/appointments/display.blade.php" />
@@ -125,12 +116,13 @@
         <option value="$PROJECT_DIR$/nfq/app/Http/Requests/AppointmentRequest.php" />
         <option value="$PROJECT_DIR$/nfq/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/nfq/resources/views/appointments/index.blade.php" />
-        <option value="$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php" />
         <option value="$PROJECT_DIR$/nfq/routes/web.php" />
         <option value="$PROJECT_DIR$/nfq/resources/views/appointments/show.blade.php" />
         <option value="$PROJECT_DIR$/nfq/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/nfq/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php" />
+        <option value="$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php" />
+        <option value="$PROJECT_DIR$/nfq/readme.md" />
       </list>
     </option>
   </component>
@@ -302,12 +294,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568875327860</updated>
-      <workItem from="1568875331482" duration="48209000" />
+      <workItem from="1568875331482" duration="49730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48209000" />
+    <option name="totallyTimeSpent" value="49730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-228" y="-1080" width="1046" height="1080" extended-state="6" />
@@ -383,16 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nfq/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="13" selection-start-column="13" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nfq/database/migrations/2019_09_21_164658_add_slug_column_to_appointments_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -438,23 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nfq/app/Appointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nfq/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nfq/resources/views/appointments/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -473,16 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="33" column="55" lean-forward="true" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#40#81#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,6 +465,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nfq/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -517,10 +479,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php">
+    <entry file="file://$PROJECT_DIR$/nfq/app/Appointment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+        <state relative-caret-position="377">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nfq/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nfq/app/Http/Controllers/AppointmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="e#40#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nfq/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="192">
+            <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
