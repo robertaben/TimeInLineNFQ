@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29622cde-234c-4d32-b51d-1a26debc4329" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nfq/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/nfq/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="524">
+              <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -302,24 +302,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568875327860</updated>
-      <workItem from="1568875331482" duration="47730000" />
+      <workItem from="1568875331482" duration="48209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47730000" />
+    <option name="totallyTimeSpent" value="48209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-228" y="-1080" width="1046" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28386453" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28386453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.23168316" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.23168316" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -519,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nfq/database/seeds/AppointmentsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="524">
+          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
         </state>
       </provider>
     </entry>

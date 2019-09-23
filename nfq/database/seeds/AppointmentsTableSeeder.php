@@ -15,6 +15,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment1 = new Appointment();
         $appointment1->user_id = 1;
         $appointment1->customer_name = 'Petras';
+        $appointment1->status = 1;
         $appointment1->created_at = '2019-09-21 08:15:13';
         $appointment1->started_at = '2019-09-21 08:15:13';
         $appointment1->completed_at = '2019-09-21 08:30:00';
@@ -24,6 +25,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment2 = new Appointment();
         $appointment2->user_id = 1;
         $appointment2->customer_name = 'Jonas';
+        $appointment2->status = 1;
         $appointment2->created_at = '2019-09-21 08:17:13';
         $appointment2->started_at = '2019-09-21 08:30:00';
         $appointment2->completed_at = '2019-09-21 08:47:00';
@@ -33,6 +35,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment3 = new Appointment();
         $appointment3->user_id = 1;
         $appointment3->customer_name = 'Ona';
+        $appointment3->status = 1;
         $appointment3->created_at = '2019-09-21 08:33:21';
         $appointment3->started_at = '2019-09-21 08:47:00';
         $appointment3->completed_at = '2019-09-21 08:55:00';
@@ -42,6 +45,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment4 = new Appointment();
         $appointment4->user_id = 1;
         $appointment4->customer_name = 'Giedrius';
+        $appointment4->status = 1;
         $appointment4->created_at = '2019-09-21 08:41:19';
         $appointment4->started_at = '2019-09-21 08:55:00';
         $appointment4->completed_at = '2019-09-21 09:15:45';
@@ -51,6 +55,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment5 = new Appointment();
         $appointment5->user_id = 1;
         $appointment5->customer_name = 'Jonas';
+        $appointment5->status = 1;
         $appointment5->created_at = '2019-09-21 10:01:05';
         $appointment5->started_at = '2019-09-21 10:01:05';
         $appointment5->completed_at = '2019-09-21 10:27:47';
@@ -60,6 +65,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment6 = new Appointment();
         $appointment6->user_id = 1;
         $appointment6->customer_name = 'Antanas';
+        $appointment6->status = 1;
         $appointment6->created_at = '2019-09-21 10:10:05';
         $appointment6->started_at = '2019-09-21 10:27:47';
         $appointment6->completed_at = '2019-09-21 10:44:00';
@@ -69,6 +75,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment7 = new Appointment();
         $appointment7->user_id = 1;
         $appointment7->customer_name = 'Saulius';
+        $appointment7->status = 1;
         $appointment7->created_at = '2019-09-21 10:15:19';
         $appointment7->started_at = '2019-09-21 10:44:00';
         $appointment7->completed_at = '2019-09-21 11:05:47';
@@ -78,6 +85,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment8 = new Appointment();
         $appointment8->user_id = 1;
         $appointment8->customer_name = 'Paulina';
+        $appointment8->status = 1;
         $appointment8->created_at = '2019-09-21 11:39:06';
         $appointment8->started_at = '2019-09-21 11:39:06';
         $appointment8->completed_at = '2019-09-21 12:01:44';
@@ -87,6 +95,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment9 = new Appointment();
         $appointment9->user_id = 1;
         $appointment9->customer_name = 'Indrė';
+        $appointment9->status = 1;
         $appointment9->created_at = '2019-09-21 13:05:55';
         $appointment9->started_at = '2019-09-21 13:05:55';
         $appointment9->completed_at = '2019-09-21 13:30:03';
@@ -108,7 +117,7 @@ class AppointmentsTableSeeder extends Seeder
         $appointment11->created_at = '2019-09-21 13:09:50';
         $appointment11->started_at = null;
         $appointment11->completed_at = null;
-        $appointment11->slug = '112019092130950';
+        $appointment11->slug = '1120190921130950';
         $appointment11->save();
 
         $appointment12 = new Appointment();
