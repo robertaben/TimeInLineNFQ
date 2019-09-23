@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::match(['put', 'patch'], '/appointments/{id}/{slug}', 'AppointmentController@delay')->name('appointments.delay');
 Route::get('appointments/display', 'AppointmentController@display')->name('appointments.display');
 Route::resource('appointments', 'AppointmentController', ['except' => 'show']);
-Route::get('/appointments/{slug}', 'AppointmentController@show')->name('appointments.show');
+Route::get('/appointments/{id}/{slug}', 'AppointmentController@show')->name('appointments.show');
+
 
 Auth::routes();
 

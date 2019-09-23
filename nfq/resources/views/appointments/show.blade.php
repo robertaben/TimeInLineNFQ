@@ -8,6 +8,21 @@
                     <h4>{{$appointment->customer_name}}, your appointment is finished</h4>
                 @else
                     <h3 class="pb-3">Welcome {{$appointment->customer_name}}, your appointment details:</h3>
+                    <div class="d-flex justify-content-around">
+                        @if ($appointment->started_at == null)
+                            <form action="{{ route('appointments.destroy', [$appointment->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Delete appointment" class="btn  btn-danger text-white mb-3">
+                            </form>
+                            <form action="{{ route('appointments.delay', [$appointment->id, $appointment->slug]) }}"
+                                  method="post">
+                                @csrf
+                                @method('PATCH')
+                                <input type="submit" value="Postpone appointment" class="btn  btn-info text-white mb-3">
+                            </form>
+                        @endif
+                    </div>
                     <div class="table-responsive">
                         <table id="customerTable" class="table table-hover">
                             <thead class="thead-dark">
@@ -31,15 +46,19 @@
                 @endif
             </div>
         </div>
+        <div class="row">
+
+        </div>
     </div>
 @endsection
 
 @section('scripts')
-        <script>
-        function refreshTable(){
+    <script>
+        function refreshTable() {
             $('#customerTable').load(' #customerTable');
         }
-        setInterval(function(){
+
+        setInterval(function () {
             refreshTable()
         }, 5000);
     </script>

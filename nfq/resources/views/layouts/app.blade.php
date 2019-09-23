@@ -90,15 +90,16 @@
             @if(Session::has('message'))
                 @if(Session::has('message-class'))
                     <div class="alert {{ Session::get('message-class') }}">
-                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
-                                    class="sr-only">Close</span></button>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-info mt-1" data-dismiss="alert">Ok, close</button>
+                        </div>
                         {{ Session::get('message') }}
                     </div>
                 @else
                     <div class="alert alert-info justify-content-center">
                         {{ Session::get('message') }}
                         <div class="text-center">
-                            <button type="button" class="btn btn-info" data-dismiss="alert">Ok, close</button>
+                            <button type="button" class="btn btn-info mt-1" data-dismiss="alert">Ok, close</button>
                         </div>
                     </div>
                 @endif

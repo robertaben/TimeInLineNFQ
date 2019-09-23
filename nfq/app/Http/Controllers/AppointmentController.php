@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AppointmentRequest;
 use Illuminate\Http\Request;
 
 use App\Appointment;
@@ -15,11 +16,17 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['index']);
+    }
+
     public function index()
     {
         $appointments = Appointment::activeAppointments()->get();
-        $allCompleted = Appointment::where('status', 1)->orderBy('completed_at')->get();
-        return view('appointments.index', ['appointments'=> $appointments, 'allCompleted'=> $allCompleted]);
+        $completed = Appointment::where('status', 1)->orderBy('completed_at')->limit(5)->get();
+        return view('appointments.index', ['appointments'=> $appointments, 'completed'=> $completed]);
     }
 
     /**
@@ -38,7 +45,7 @@ class AppointmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AppointmentRequest $request)
     {
         $appointment = new Appointment();
         $appointment->user_id = 1;
@@ -54,7 +61,7 @@ class AppointmentController extends Controller
         Appointment::waitingTime($appointment->id, $appointment->user_id);
 //        dd(Appointment::averageAppointmentTime($appointment->user_id));
 
-        $request->session()->flash('message', 'New appointment was created successfully! You can see your appointment status in the link below: http://127.0.0.1:8000/appointments/'.$appointment->slug);
+        $request->session()->flash('message', 'New appointment was created successfully! You can see your appointment status in the link below: http://127.0.0.1:8000/appointments/'.$appointment->id.'/'.$appointment->slug);
         return redirect()->back();
     }
 
@@ -64,7 +71,7 @@ class AppointmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id, $slug)
     {
         $appointment = Appointment::where('slug', '=', $slug)->first();
 
@@ -116,12 +123,34 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::where('id', $id);
         $appointment->delete();
-        return redirect()->route('appointments.index');
+        return redirect()->route('appointments.create');
     }
 
     public function display()
     {
         $appointments = Appointment::activeAppointments()->where('started_at', null)->get();
         return view('appointments.display', ['appointments'=> $appointments]);
+    }
+
+    public function delay($id)
+    {
+        $appointment = Appointment::find($id);
+//        $nextAppointment = Appointment::activeAppointments()->where('started_at', null)->where('created_at', '>', $appointment->created_at)->limit(1);
+        $switch_dates = null;
+        $nextAppointment = null;
+
+        if (Appointment::activeAppointments()->where('started_at', null)->where('created_at', '>', $appointment->created_at)->limit(1)->exists()) {
+            $nextAppointment = Appointment::activeAppointments()->where('started_at', null)->where('created_at', '>', $appointment->created_at)->first();
+            if ($nextAppointment->created_at->gt($appointment->created_at)) {
+                $switch_dates = $appointment->created_at;
+                $appointment->created_at = $nextAppointment->created_at;
+                $nextAppointment->created_at = $switch_dates;
+                $appointment->save();
+                $nextAppointment->save();
+                return redirect()->back()->with('message', 'Your appointment was delayed');
+            }
+        } else {
+            return redirect()->back()->with('message', 'You are the last in line, please wait for Your appointment or come back later');
+        }
     }
 }

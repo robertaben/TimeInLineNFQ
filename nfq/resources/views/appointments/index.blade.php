@@ -40,10 +40,10 @@
                                     </td>
                                 </tr>
                             @endforeach
-                            @foreach($allCompleted as $completed)
+                            @foreach($completed as $completed_1)
                                 <tr class="text-center">
-                                    <td>{{ $completed->id }}</td>
-                                    <td>{{ $completed->customer_name }}</td>
+                                    <td>{{ $completed_1->id }}</td>
+                                    <td>{{ $completed_1->customer_name }}</td>
                                     <td>
                                         Appointment completed
                                     </td>
