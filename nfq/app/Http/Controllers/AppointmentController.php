@@ -61,7 +61,7 @@ class AppointmentController extends Controller
         Appointment::waitingTime($appointment->id, $appointment->user_id);
 //        dd(Appointment::averageAppointmentTime($appointment->user_id));
 
-        $request->session()->flash('message', 'New appointment was created successfully! You can see your appointment status in the link below: http://127.0.0.1:8000/appointments/'.$appointment->id.'/'.$appointment->slug);
+        $request->session()->flash('message', 'New appointment was created successfully! You can see your appointment status in the link: http://polar-earth-48772.herokuapp.com/appointments/'.$appointment->id.'/'.$appointment->slug);
         return redirect()->back();
     }
 
@@ -135,7 +135,6 @@ class AppointmentController extends Controller
     public function delay($id)
     {
         $appointment = Appointment::find($id);
-//        $nextAppointment = Appointment::activeAppointments()->where('started_at', null)->where('created_at', '>', $appointment->created_at)->limit(1);
         $switch_dates = null;
         $nextAppointment = null;
 
